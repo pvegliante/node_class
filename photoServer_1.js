@@ -14,15 +14,21 @@ function load_album_list(callback) {
 
             var only_dirs = [];
 
-            for (let i = 0; files && i < files.length; i++) {
-                fs.stat('albums/' + files[i], (err, stats) => {
-                    if (stats.isDirectory()) {
-                        only_dirs.push(files[i]);
-                    }
-                });
+            var iterator = (index) => {
+              if (index == files.length) {
+                callback(null, only_dirs);
+                return;
+              }
+
+              fs.stat('albums/' + files[index], (err, stats) => {
+                if (stats.isDirectory()) {
+                  only_dirs.push(files[index]);
+                }
+                iterator(index + 1);
+              });
             }
 
-            callback(null, only_dirs);
+            iterator(0);
     });
 }
 
