@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Lions</title>
+</head>
+
+<body>
+
+    <main>
+        <h1>Lions</h1>
+
+        <form name="lions">
+            <div class="textbox">
+                <input type="text" name="lion-name" required>
+                <span class="highlight"></span>
+                <label>lion name</label>
+            </div>
+            <div class="textbox">
+                <input type="text" name="lion-pride" required>
+                <span class="highlight"></span>
+                <label>lion pride</label>
+            </div>
+
+            <input type="number" name="lion-age" required>
+            <select class="" name="select">
+          <option value="female">female</option>
+          <option value="male">male</option>
+        </select>
+            <button>Submit</button>
+        </form>
+
+        <div class="content">
+            <ul class="lion-list"></ul>
+
+        </div>
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
