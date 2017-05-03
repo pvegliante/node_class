@@ -8,7 +8,7 @@ var lions = [];
 var makeTemplate = function(data) {
   var li = document.createElement('li');
   var lionList = document.querySelector('.lion-list');
-  var complied = _.template(lionTemplate);
+  var compiled = _.template(lionTemplate);
   var lionHtml = compiled(data);
   li.innerHTML = lionHtml;
   lionList.insertBefore(li, lionList.firstChild);
@@ -38,9 +38,27 @@ var getValues = function() {
   };
 };
 
+var makeLionList = function() {
+  lions.forEach(function(lion) {
+    makeTemplate(lion);
+  });
+};
+
+
+var getAllLions = function() {
+  fetch('/lions')
+    .then(function (resp) {
+    return resp.json();
+  })
+  .then(function(data) {
+    lions = lions.concat(data);
+    makeLionList();
+  });
+};
 
 
 (function() {
+  getAllLions();
   var form = document.querySelector('form');
 
   form.addEventListener('submit', function(e) {
@@ -55,7 +73,7 @@ var getValues = function() {
         'Content-Type': 'application/json'
       },
 
-      body: JSON.stringify(values);
+      body: JSON.stringify(values)
     })
     .then(function(resp) {
       return resp.json();

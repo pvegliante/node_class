@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="main.css">
+  <title>items</title>
+</head>
+<body>
+
+  <main>
+    <h1>Items</h1>
+
+    <!-- // name
+    // catagory
+    // warrenty
+    // manufacture
+    // color -->
+
+    <form name="items">
+      <div class="textbox">
+        <input type="text" name="item-name" required>
+        <span class="highlight"></span>
+        <label>item name</label>
+      </div>
+      <div class="textbox">
+        <input type="text" name="item-catagory" required>
+        <span class="highlight"></span>
+        <label>item catagory</label>
+      </div>
+      <div class="textbox">
+        <input type="text" name="item-warrenty" required>
+        <span class="highlight"></span>
+        <label>item warrenty</label>
+      </div>
+      <div class="textbox">
+        <input type="text" name="item-manufacture" required>
+        <span class="highlight"></span>
+        <label>item manufacture</label>
+      </div>
+      <div class="textbox">
+        <input type="text" name="item-color" required>
+        <span class="highlight"></span>
+        <label>item color</label>
+      </div>
+      <button>Submit</button>
+    </form>
+
+    <div class="content">
+      <<ul class="item-list"></ul>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js">
+
+  </script>
+  <script src="app.js">
+  </script>
+
+
+</body>
+</html>
