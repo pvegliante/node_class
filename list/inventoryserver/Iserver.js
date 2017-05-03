@@ -18,7 +18,7 @@ var updateId = function(req, res, next) {
 
 app.use(morgan('dev'));
 app.use(express.static('Iclient'));
-app.use(bodyParser.urlencoded({extend: true}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.get('/item', function(req, res, next, id) {
@@ -40,10 +40,10 @@ app.get('/items/:id', function(req, res) {
   res.json(itme || {});
 });
 
-app.post('/items', function(req, res) {
+app.post('/items', updateId, function(req, res) {
   var item = req.body;
 
-  item.push(item);
+  items.push(item);
   res.json(item);
 });
 
@@ -54,7 +54,7 @@ app.put('/items/:id', function(req, res) {
   }
 
   var item =_.findIndex(items, {id: req.params.id});
-  if (!lions[lion]) {
+  if (!items[item]) {
     res.send();
   }else{
     var updatedItem = _.assign(items[item], update);
@@ -64,7 +64,7 @@ app.put('/items/:id', function(req, res) {
 
 app.delete('/items/:id', function(req, res) {
   var item = _.findIndex(items, {id: req.params.id})
-  if(!lions[lion]) {
+  if(!items[item]) {
     res.send();
   } else {
     var deletedItem = items[item];

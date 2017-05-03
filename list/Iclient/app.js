@@ -54,7 +54,7 @@ var makeItemList = function() {
   });
 };
 
-var getAllLions = function() {
+var getAllItems = function() {
   fetch('/items')
   .then(function (resp) {
     return resp.json();
@@ -66,7 +66,7 @@ var getAllLions = function() {
 };
 
 (function() {
-  getAllLions();
+  getAllItems();
   var form = document.querySelector('form');
 
   form.addEventListener('submit', function(e) {
