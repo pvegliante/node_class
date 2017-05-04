@@ -1,8 +1,8 @@
-var itemTemplate = '<h3><%= name %></h3>' +
-'<h3><%= catagory%></h3>' +
-'<small>warrenty: <%= warrenty%></small>'+
-'<small><%=manufacture %></small>' +
-'<small><%=color %<>/small>';
+var itemTemplate = '<h3>Item Name - <%= name %></h3>' +
+'<h3>Catagory - <%= catagory%></h3>' +
+'<h3>Warrenty - <%= warrenty%></h3>'+
+'<h3>Manufacture - <%=manufacture %></h3>' +
+'<h3>Color - <%=color %></h3>';
 
 var items = [];
 
@@ -89,6 +89,6 @@ var getAllItems = function() {
       items.push(createdItem);
       updateItemList();
     })
-    reutrn false;
+    return false;
   });
 })();

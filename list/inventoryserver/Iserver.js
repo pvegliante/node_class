@@ -43,7 +43,9 @@ app.get('/items/:id', function(req, res) {
 app.post('/items', updateId, function(req, res) {
   var item = req.body;
 
-  items.push(item);
+  items
+
+  .push(item);
   res.json(item);
 });
 
