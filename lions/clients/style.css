@@ -447,7 +447,7 @@ main {
   background-color: lightblue;
   width: 80vw;
   margin:  0 auto;
-  padding-left: 30px;
+  /*padding-left: 30px;*/
   box-shadow: 3px 3px 3px black;
 }
 
@@ -465,6 +465,11 @@ main h1  {
   margin-bottom: 40px;
   position: relative;
   width: 100%;
+  padding-left: 30px;
+}
+
+.content {
+  padding-left: 30px;
 }
 
 .textbox input {
@@ -499,27 +504,39 @@ main h1  {
 .top-index {
   display: flex;
   justify-content: center;
-  padding-right: 40px;
+  /*padding-right: 40px;*/
 }
 
 .img-index {
   display: flex;
   flex: 1;
   z-index: 2;
+  justify-content: space-around;
 }
 
 .imgindex {
-
+  display: flex;
+  flex: 1;
 }
 
 .img {
   justify-content: center;
+  align-self: center;
   width: 20vw;
-  height: 20vh;
+  /*height: 20vh;*/
 }
 
 .leftimg {
   justify-content: center;
+  align-self: center;
   width: 20vw;
-  height: 20vh;
+  /*height: 20vh;*/
+}
+
+.inputform {
+  padding-left: 30px;
+}
+
+label {
+  font-size: 2rem;
 }

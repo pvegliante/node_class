@@ -3,6 +3,9 @@ var bodyParser = require('body-parser');
 var app = express();
 var _ = require('lodash');
 var morgan = require('morgan');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://pete:kissmyass2006@ds133311.mlab.com:33311/newlion')
 
 var lionRouter = require('./lions');
 var tigerRouter = require('./tigers');
