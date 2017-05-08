@@ -1,7 +1,7 @@
 var lionTemplate = '<h3><%= name %></h3>' +
 '<h3><%= pride%></h3>'+
-'<small>age: <%= age%></small>'+
-'<small><%=gender %></small>';
+'<h5>age: <%= age%></h5>'+
+'<h5><%=gender %></h5>';
 
 var lions = [];
 

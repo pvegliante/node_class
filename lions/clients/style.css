@@ -443,9 +443,22 @@ body, html {
 }
 
 main {
+  font-family: 'Ravi Prakash', cursive;
+  background-color: lightblue;
   width: 80vw;
   margin:  0 auto;
+  padding-left: 30px;
+  box-shadow: 3px 3px 3px black;
 }
+
+main h1  {
+  text-align: left;
+  color: tan;
+  font-size: 5rem;
+  text-shadow: 0px 0px 5px black;
+  font-family: 'Ravi Prakash', cursive;
+}
+
 
 .textbox {
   max-width: 200px;
@@ -470,4 +483,43 @@ main {
 
 .textbox input:focus ~ .highlight {
   animation: inputHighlight 0.3s ease;
+}
+
+/*main-index, top-index, img-index*/
+
+.main-index {
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content: space-around;
+
+}
+
+/*#ADD8E6*/
+
+.top-index {
+  display: flex;
+  justify-content: center;
+  padding-right: 40px;
+}
+
+.img-index {
+  display: flex;
+  flex: 1;
+  z-index: 2;
+}
+
+.imgindex {
+
+}
+
+.img {
+  justify-content: center;
+  width: 20vw;
+  height: 20vh;
+}
+
+.leftimg {
+  justify-content: center;
+  width: 20vw;
+  height: 20vh;
 }
