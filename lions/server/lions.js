@@ -36,8 +36,12 @@ lionRouter.get('/', function(req, res) {
 });
 
 lionRouter.get('/:id', function(req, res) {
-    var lion = req.lion;
-    res.json(lion || {});
+    Lion.findById(req.params.id,(err, lion) => {
+      if (err) {
+        res.send(err);
+      }
+      res.json(lion);
+    });
 });
 
 lionRouter.post('/', function(req, res) {
@@ -59,10 +63,31 @@ lionRouter.post('/', function(req, res) {
 });
 
 lionRouter.put('/:id', function(req, res) {
-  var update = req.body;
-  if (update.id) {
-    delete update.id;
-  }
+  Lion.findById(req.params.id, (err, lion) => {
+    if (err) {
+      res.send();
+    }
+    if(req.body.name) {
+      lion.name = req.body.name;
+    }
+    if(req.body.age) {
+      lion.age = req.body.age;
+    }
+    if(req.body.pride) {
+      lion.pride = req.body.pride;
+    }
+    if(req.body.gender) {
+      lion.gender = req.body.gender;
+    }
+
+    lion.save((err) => {
+      if(err) {
+        res.send(err);
+      }
+      res.json({message: 'Update the lions'});
+    });
+  });
+});
 
   var lion = _.findIndex(lions, {id: req.params.id});
   if (!lions[lion]) {
@@ -74,14 +99,12 @@ lionRouter.put('/:id', function(req, res) {
 });
 
 lionRouter.delete('/:id', function(req, res) {
-    var lion = _.findIndex(lions, {id: req.params.id});
-    if (!lions[lion]) {
-        res.send();
-    } else {
-        var deletedLion = lions[lion];
-        lions.splice(lion, 1);
-        res.json(deletedLion);
+  Lion.remove({_id: req.params.id}, (err, lion) => {
+    if (err) {
+      res,send(err);
     }
+    res.json({message: 'Deleted the Lion'});
+  });
 });
 
 module.exports = lionRouter;
