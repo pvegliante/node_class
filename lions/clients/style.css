@@ -466,6 +466,9 @@ main h1  {
   position: relative;
   width: 100%;
   padding-left: 30px;
+  color: tan;
+  text-shadow: 0px 0px 5px black;
+  letter-spacing: .3rem;
 }
 
 .content {
@@ -502,6 +505,7 @@ main h1  {
 /*#ADD8E6*/
 
 .top-index {
+  letter-spacing: 1rem;
   display: flex;
   justify-content: center;
   /*padding-right: 40px;*/
@@ -535,6 +539,10 @@ main h1  {
 
 .inputform {
   padding-left: 30px;
+  font-size: 1.5rem;
+  color: tan;
+  text-shadow: 0px 0px 5px black;
+  letter-spacing: .3rem;
 }
 
 label {

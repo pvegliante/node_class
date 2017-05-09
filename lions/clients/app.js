@@ -1,4 +1,4 @@
-var lionTemplate = '<h3><%= name %></h3>' +
+var lionTemplate = '<h2><%= name %></h2>' +
 '<h3><%= pride%></h3>'+
 '<h5>age: <%= age%></h5>'+
 '<h5><%=gender %></h5>';
