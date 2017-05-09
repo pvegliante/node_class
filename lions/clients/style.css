@@ -473,6 +473,7 @@ main h1  {
 
 .content {
   padding-left: 30px;
+
 }
 
 .textbox input {
@@ -547,4 +548,11 @@ main h1  {
 
 label {
   font-size: 2rem;
+}
+
+.lion-list {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
+  align-items: stretch;
 }
