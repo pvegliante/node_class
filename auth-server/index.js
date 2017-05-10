@@ -16,5 +16,14 @@ mongoose.connect('mongodb://pete:kissmyass2006@ds133311.mlab.com:33311/newlion',
     if (err) {
       throw err;
     }
+
+    User.find((err, user) => {
+      if (err) {
+        throw err;
+      }
+
+      console.log(users);
+      process.exit();
+    })
   });
 });
