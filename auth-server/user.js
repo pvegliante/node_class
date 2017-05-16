@@ -6,22 +6,22 @@ const SALT_WORK_FACTOR = 10;
 let User;
 
 const UserSchema = new mongoose.Schema({
-  firstName: { type: String, require: true},
-  lastName: { type: String, },
+  firstName: { type: String, required: true},
+  lastName: { type: String },
   userName: { type: String },
   email: {
     type: String,
     require: true,
     index: { unique: true }
   },
-  password: { type: String, require: true }
+  password: { type: String, required: true }
 });
 
 //validation
 //------------------------
 
 UserSchema.path('email').validate((email) => {
-  return /.?@.?\./.test(email);
+  return /.?@.?\.?/.test(email);
 }, 'Invalid email address');
 
 // filter
@@ -58,7 +58,7 @@ UserSchema.static('attemptLogin', (email, password, cb) => {
       if(isMatch) {
         return cb(null, user);
       } else {
-        return cd();
+        return cb();
       }
     });
   });

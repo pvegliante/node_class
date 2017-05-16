@@ -12,7 +12,7 @@ var tigerRouter = require('./tigers');
 
 app.use(morgan('dev'));
 app.use(express.static('clients'));
-app.use(bodyParser.urlencoded({extend: true}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 //this is called mounting. when a request comes in for
